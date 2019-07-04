@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dashboard_ui.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -32,26 +33,27 @@ class _HomePageState extends State<HomePage> {
     }
     var title = 'Reserved Class';
     //Test Code ends here
-    return Align(
-      child: Container(
-        color: Colors
-            .grey[180], //TODO: Move background color to material App properties
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            IconElementGroup(iconList, title),
-            IconElementGroup(iconList, 'Unreserved Class'),
-            IconElementGroup(iconList, 'Initiatives'),
-            IconElementGroup(iconList, 'Freight'),
-            IconElementGroup(iconList, 'Expenditure & Bills'),
-            IconElementGroup(iconList, title),
-          ],
-          shrinkWrap: true,
-        ),
-        constraints: BoxConstraints(),
-      ),
-      alignment: Alignment.topCenter,
-    );
+    return
+              Container(
+                  decoration: BoxDecoration(  image: new DecorationImage(
+        image: new AssetImage("assets/images/bgcurve.png"),
+    fit: BoxFit.cover,
+    ),),
+                  
+                  //TODO: Move background color to material App properties
+                child:
+
+                  ListView(
+                   children: <Widget>[carousel(),
+                   IconElementGroup(iconList, title),
+                    IconElementGroup(iconList, 'Unreserved Class'),
+                    IconElementGroup(iconList, 'Initiatives'),
+                     IconElementGroup(iconList, 'Freight'),
+                    IconElementGroup(iconList, 'Expenditure & Bills'),
+                    IconElementGroup(iconList, title),
+                ],
+                shrinkWrap: true,)
+              );
   }
 
   @override
@@ -87,5 +89,31 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+}
+
+class carousel extends StatelessWidget {
+  var carousl = Container(
+    height: 200,padding: EdgeInsets.fromLTRB(10,0, 10, 0),
+    child: Carousel(
+      images: [
+        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg')
+      ],
+      showIndicator: false,
+      borderRadius: false,
+      moveIndicatorFromBottom: 180.0,
+      noRadiusForIndicator: true,
+      overlayShadow: true,
+      overlayShadowColors: Colors.white,
+      overlayShadowSize: 0.7,
+
+    ),
+  );
+  @override
+  Widget build(BuildContext context) {
+    return carousl;
   }
 }
