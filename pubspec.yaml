@@ -1,5 +1,5 @@
 name: edrishti
-description: eDrishti Application for Railways
+description: RailDrishti Application for Railways
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -23,6 +23,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  carousel_pro: ^0.0.13
 
 dev_dependencies:
   flutter_test:
@@ -37,9 +38,12 @@ flutter:
    uses-material-design: true
    assets:
      - assets/images/raillogoactual.png
+     - assets/images/bgcurve.png
      - assets/images/RailDrishtilogo.png
      - assets/images/user.jpg
-
+     - assets/images/ir_first.jpg
+     - assets/images/ir_second.jpg
+     - assets/images/ir_four.jpg
 
 
 
