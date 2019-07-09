@@ -94,13 +94,61 @@ class _HomePageState extends State<HomePage> {
 
 class carousel extends StatelessWidget {
   var carousl = Container(
-    height: 200,padding: EdgeInsets.fromLTRB(10,0, 10, 0),
+    height: 200,//padding: EdgeInsets.fromLTRB(10,0, 10, 0),
     child: Carousel(
       images: [
-        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-        NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg')
+
+            NetworkImage(
+                'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_01.jpg'),
+
+  NetworkImage(
+  'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_02.jpg'),
+
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_03.jpg',),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_04.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_05.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_06.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_07.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_08.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_09.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_10.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_11.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_12.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_13.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_14.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_15.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_16.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_17.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_18.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_19.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_20.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_21.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_22.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_23.jpg'),
+        NetworkImage(
+            'https://www.raildrishti.in/raildrishti/img/achievements/ir/ir_24.jpg'),
+    
       ],
       showIndicator: false,
       borderRadius: false,
