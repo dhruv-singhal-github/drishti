@@ -58,6 +58,7 @@ class IconElementGroup extends StatelessWidget {
                 children: _elements,
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
+                physics: PageScrollPhysics(),
               ),
             ),
           ],
