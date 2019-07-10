@@ -65,30 +65,25 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _createMainPage(),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey,
+        shape: CircularNotchedRectangle(),
+        notchMargin:4.0,
+        color: Colors.teal,
         child: Row(
+          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Icon(
-              Icons.home,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.business,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.train,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.link,
-              color: Colors.white,
-            ),
+            IconButton(icon: Icon(Icons.menu),onPressed: (){},),
+            IconButton(icon:Icon(Icons.search),onPressed: () {},),
+            IconButton(icon:Icon(Icons.search),onPressed: () {},),
+            IconButton(icon:Icon(Icons.search),onPressed: () {},)
           ],
         ),
       ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+          child:const Icon(Icons.home),onPressed: (){}),
     );
+
   }
 }
 
