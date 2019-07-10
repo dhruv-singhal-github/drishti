@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'dashboard_ui.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'links_ui.dart';
+import 'maps_ui.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -58,33 +61,64 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(24, 68, 51, 1),
-        title: Text('RailDrishti'),
-      ),
-      body: _createMainPage(),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        notchMargin:4.0,
-        color: Colors.teal,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            IconButton(icon: Icon(Icons.menu),onPressed: (){},),
-            IconButton(icon:Icon(Icons.search),onPressed: () {},),
-            IconButton(icon:Icon(Icons.search),onPressed: () {},),
-            IconButton(icon:Icon(Icons.search),onPressed: () {},)
-          ],
-        ),
-      ),
-    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-          child:const Icon(Icons.home),onPressed: (){}),
-    );
+    return openPage(_createMainPage());
 
   }
+
+Widget openPage(Widget child){
+  return Scaffold(
+    appBar: AppBar(
+      backgroundColor: Color.fromRGBO(24, 68, 51, 1),
+      title: Text('RailDrishti'),
+    ),
+    body: child,
+    bottomNavigationBar: BottomAppBar(
+      shape: CircularNotchedRectangle(),
+      notchMargin:4.0,
+      color: Colors.teal,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          IconButton(icon: Icon(Icons.menu),onPressed: (){
+
+          },),
+          IconButton(icon:Icon(Icons.map),onPressed: () {
+            Navigator
+                .of(context)
+                .push(new MaterialPageRoute(builder: (BuildContext context) {
+              return openPage(MapLayout());
+            }),);
+          },),
+          IconButton(icon:Icon(Icons.map),onPressed: () {
+            Navigator
+                .of(context)
+                .push(new MaterialPageRoute(builder: (BuildContext context) {
+              return openPage(MapLayout());
+            }),);
+          },),
+          IconButton(icon:Icon(Icons.link),onPressed: () {
+            Navigator
+                .of(context)
+                .push(new MaterialPageRoute(builder: (BuildContext context) {
+              return openPage(LinkScreen());
+            }),);
+          },)
+        ],
+      ),
+    ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    floatingActionButton: FloatingActionButton(
+        child:const Icon(Icons.home),onPressed: (){
+      Navigator
+          .of(context)
+          .push(new MaterialPageRoute(builder: (BuildContext context) {
+        return openPage(_createMainPage());
+      }),);
+    }),
+  );
+}
+
 }
 
 class carousel extends StatelessWidget {

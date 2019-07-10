@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
     Future.delayed(
       Duration(seconds: 7),
       () {
-        Navigator.push(
+        Navigator.pushReplacement(
             context,
             MaterialPageRoute(
               builder: (context) => HomePage(),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'unit_ui.dart' as units;
+import 'detail_page.dart';
 
 class IconElement extends StatelessWidget {
   final Widget _topElement;
@@ -10,14 +12,46 @@ class IconElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Column(
-          children: <Widget>[
-            (_topElement == null) ? Container() : _topElement,
-            _midElement,
-            _bottomElement,
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
+      child: GestureDetector(
+        onTapDown: (_d){
+          var page = Scaffold(
+            appBar: AppBar(
+              backgroundColor: Color.fromRGBO(24, 68, 51, 1),
+              title: Text('RailDrishti'),
+            ),
+//    body: MapLayout(),
+//    body: LinkScreen(),
+            body: DetailsScreen(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'Freight',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  units.UnitBox('MT'),
+                ],
+              ),
+            ),
+          );
+          Navigator
+              .of(context)
+              .push(new MaterialPageRoute(builder: (BuildContext context) {
+            return page;
+          }),);
+          },
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              (_topElement == null) ? Container() : _topElement,
+              _midElement,
+              _bottomElement,
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ),
       ),
       height: 80,
